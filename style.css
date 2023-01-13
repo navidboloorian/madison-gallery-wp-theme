@@ -1,0 +1,26 @@
+/*
+    Theme Name: Madison Gallery
+    Text Domain: Madison Gallery
+    Version: 1.0
+    Description: Custom theme for Madison Gallery created by Navid Boloorian
+    Author: Navid Boloorian
+    Author URI: https://www.github.com/navidboloorian
+*/
+
+@font-face
+{
+    font-family: Montserrat;
+    src: url('assets/fonts/Montserrat/Montserrat-Regular.ttf');
+}
+
+*
+{
+    font-family: Montserrat;
+}
+
+body 
+{
+    margin: 0px;
+    padding: 0px;
+    display: grid;
+}
