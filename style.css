@@ -23,12 +23,12 @@ body
     margin: 0px;
     padding: 0px;
     display: grid;
-    justify-content: center;
 }
 
 #main-wrapper 
 {
     width: 900px;
+    justify-self: center;
 }
 
 #header-wrapper
@@ -66,4 +66,58 @@ body
 {
     cursor: pointer;
     color: #000000;
+}
+
+#footer 
+{
+    background-color: #000000;
+    width: 100%;
+    color: white;
+    display: grid;
+}
+
+.footer-row 
+{
+    padding-top: 35px;
+    padding-bottom: 35px; 
+}
+
+#footer-content 
+{
+    width: 900px;
+    justify-self: center;
+}
+
+#footer-contact-row 
+{
+    display: grid;
+    font-size: 12px;
+    grid-template-columns: repeat(3, 1fr);
+    border-bottom: 1px solid #ffffff;
+}
+
+#footer-artists-row
+{
+    display: grid;
+    font-size: 9px;
+    grid-template-columns: repeat(5, 1fr);
+    border-bottom: 1px solid #ffffff;
+}
+
+#footer-artists-row a 
+{
+    text-decoration: none;
+    color: white;
+    height: 22px;
+}
+
+#footer-artists-row a > li
+{
+    list-style-type: none;
+}
+
+.footer-artist-name 
+{
+    text-transform: uppercase;
+    margin: 0px;
 }
