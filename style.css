@@ -134,3 +134,29 @@ body
 {
     text-align: center;
 }
+
+/** Artists Page **/
+#artists-image-grid 
+{
+    display: grid;
+    width: 100%;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 20px;
+}
+
+.artists-image-link 
+{
+    text-decoration: none;
+}
+
+.artists-image 
+{
+    width: 100%;
+}
+
+.artists-name 
+{
+    font-size: 11px;
+    color: #696969;
+    text-transform: uppercase;
+}
