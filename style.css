@@ -27,7 +27,7 @@ body
 
 #main-wrapper 
 {
-    width: 900px;
+    width: min(900px, 100%);
     justify-self: center;
 }
 
@@ -36,6 +36,8 @@ body
     display: grid;
     height: 100px;
     align-content: center;
+    width: min(900px, 100%);
+    justify-self: center;
 }
 
 #navbar 
@@ -60,6 +62,7 @@ body
 {
     text-decoration: none;
     color: #9b9b9b;
+    text-transform: uppercase;
 }
 
 #navbar ul a:hover 
@@ -68,7 +71,7 @@ body
     color: #000000;
 }
 
-#footer 
+#footer-wrapper
 {
     background-color: #000000;
     width: 100%;
@@ -120,4 +123,14 @@ body
 {
     text-transform: uppercase;
     margin: 0px;
+}
+
+#footer-copyright-row 
+{
+    font-size: 12px;
+}
+
+#footer-disclaimer 
+{
+    text-align: center;
 }

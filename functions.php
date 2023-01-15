@@ -1,4 +1,11 @@
 <?php
+    // unlocks wp features
+    function mg_theme_support() {
+        // adds dynamic title tags
+        add_theme_support('title-tag');
+        add_theme_support('post-thumbnails');
+    }
+
     function mg_register_styles() {
         // get version from style.css header comment
         $version = wp_get_theme()->get('Version');
@@ -13,8 +20,19 @@
         wp_enqueue_script( 'madisongallery-script', get_template_directory_uri().'/assets/js/main.js', array('jquery'), '1.0', true);
     }
 
+    function mg_menus() {
+        $menu_locations = array(
+            'primary' => 'Desktop Primary Navbar',
+            'footer' => 'Footer Menu Items'
+        );
 
-    // hijack wp_enqueue_scripts hook in order to run custom registration functions
+        register_nav_menus($menu_locations);
+    }
+
+
+    // hijack wp hooks
+    add_action('after_setup_theme', 'mg_theme_support');
     add_action('wp_enqueue_scripts', 'mg_register_styles');
     add_action('wp_enqueue_scripts', 'mg_register_scripts');
+    add_action('init', 'mg_menus');
 ?>
