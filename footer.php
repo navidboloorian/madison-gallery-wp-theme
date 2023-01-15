@@ -18,12 +18,17 @@
                 </div>
                 <div class="footer-row" id="footer-artists-row">
                     <?php 
-                        global $wpdb;
+                        $artists_args = array(
+                            'category_name' => 'artist',
+                            'orderby' => 'name',
+                            'order' => 'ASC',
+                            'numberposts' => '-1',
+                        );
 
-                        $artists = $wpdb->get_results('SELECT * FROM artists');
-                        
+                        $artists = get_posts($artists_args);
+
                         foreach ($artists as &$artist) {
-                            echo '<a href="#"><li class="footer-artist-name">'.$artist->name.'</li></a>';
+                            echo '<a href="'.$artist->guid.'"><li class="footer-artist-name">'.$artist->post_title.'</li></a>';
                         }
                     ?>
                 </div>
