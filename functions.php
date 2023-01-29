@@ -29,10 +29,38 @@
         register_nav_menus($menu_locations);
     }
 
+    function mg_post_type_artist() {
+        $labels = array(
+            'name' => __('Artist'),
+            'singular_name' => __('Artist'),
+            'add_new' => __('Add New Artist'),
+            'add_new_item' => __('Add New Artist'),
+            'edit_item' => __('Edit Artist'),
+            'new_item' => __('New Artist'),
+            'all_items' => __('All Artists'),
+            'view_item' => __('View Artist'),
+            'search_items' => __('Search Artists'),
+        );
+
+        $args = array(
+            'labels' => $labels,
+            'description' => 'Artist posts',
+            'public' => true,
+            'supports' => array('title', 'editor', 'thumbnail', 'excerpt', 'comments', 'custom-fields'),
+            'has_archive' => true,
+            'show_in_admin_bar' => true,
+            'show_in_nav_menus' => true,
+            'query_var' => true,
+        );
+
+        register_post_type('artist', $args);
+    }
+
 
     // hijack wp hooks
     add_action('after_setup_theme', 'mg_theme_support');
     add_action('wp_enqueue_scripts', 'mg_register_styles');
     add_action('wp_enqueue_scripts', 'mg_register_scripts');
     add_action('init', 'mg_menus');
+    add_action('init', 'mg_post_type_artist');
 ?>

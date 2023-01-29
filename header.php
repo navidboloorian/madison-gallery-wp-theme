@@ -14,7 +14,7 @@
         <header id="header-wrapper">
             <nav id="navbar">
                 <!--unblurred this image as a QOL fix from the original website-->
-                <a href="#"><img width="235" src=<?php echo get_template_directory_uri()."/assets/images/navbar-logo.jpg" ?>></a>
+                <a href="#"><img width="235" alt="Madison Gallery" src=<?php echo get_template_directory_uri()."/assets/images/navbar-logo.jpg" ?>></a>
                 <?php
                     // retrieves the menu links wp admin
                     wp_nav_menu(
