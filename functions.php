@@ -42,6 +42,10 @@
             'search_items' => __('Search Artists'),
         );
 
+        $blockTemplate = array(
+            array('core/table')
+        );
+
         $args = array(
             'labels' => $labels,
             'description' => 'Artist posts',
@@ -50,6 +54,9 @@
             'has_archive' => true,
             'show_in_admin_bar' => true,
             'show_in_nav_menus' => true,
+            'show_in_rest' => true,
+            'template_lock' => true,
+            'template' => $blockTemplate,
             'query_var' => true,
         );
 
