@@ -9,7 +9,7 @@ const positionFooter = () => {
     const mainWrapper = document.querySelector('#main-wrapper');
     const footer = document.querySelector('#footer-wrapper');
 
-    mainWrapper.style.minHeight = window.innerHeight - (100 + footer.clientHeight) + "px";
+    mainWrapper.style.minHeight = window.innerHeight - (132 + footer.clientHeight) + "px";
 
     console.log(mainWrapper.style.minHeight);
 }

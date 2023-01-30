@@ -208,7 +208,6 @@ body
 {
     display: grid;
     grid-template-columns: 220px auto;
-    margin-top: 20px;
 }
 
 #artist-content h3 
@@ -230,11 +229,6 @@ body
 {
     display: grid;
     grid-template-columns: 200px auto;
-}
-
-#contact-sidebar h1 
-{
-    text-transform: uppercase;
 }
 
 #contact-content p 

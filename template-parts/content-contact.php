@@ -9,12 +9,11 @@
     }
 ?>
 <div id="contact-grid">
-    <div id="contact-sidebar">
+    <div class="details-sidebar">
         <h1 class="sidebar-header">Contact</h1>
     </div>
     <div id="contact-content">
-        <p>To receive invitations for future exhibitions and email updates about
-news and more please sign up for our mailing list.</p>
+        <p>To receive invitations for future exhibitions and email updates about news and more please sign up for our mailing list.</p>
         <form id="mailing-list-form" action="" method="post">
             <input type="text" name="mailing-list-name" placeholder="Full name" required><br>
             <input type="email" name="mailing-list-email" placeholder="Email" required><br>
