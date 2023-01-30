@@ -1,13 +1,3 @@
-<?php 
-    if(isset($_POST['mailing-list-submit'])) {
-        global $wpdb;
-
-        $name = htmlspecialchars($_POST['mailing-list-name']);
-        $email = htmlspecialchars($_POST['mailing-list-email']);
-
-        $wpdb->insert('mailing_list', array('name' => $name, 'email' => $email));
-    }
-?>
 <div id="about-grid">
     <div class="details-sidebar">
         <h1 class="sidebar-header"><?php the_title(); ?></h1>

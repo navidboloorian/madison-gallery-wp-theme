@@ -64,7 +64,7 @@
                         ),
                         array( 
                             array(
-                                'core/paragraph',
+                                'core/gallery',
                                 array(
                                     ''
                                 ),
@@ -112,6 +112,34 @@
         register_post_type('artist', $args);
     }
 
+    function mg_post_type_press() {
+        $labels = array(
+            'name' => __('Press'),
+            'singular_name' => __('Press'),
+            'add_new' => __('Add New Press'),
+            'add_new_item' => __('Add New Press'),
+            'edit_item' => __('Edit Press'),
+            'new_item' => __('New Press'),
+            'all_items' => __('All Press'),
+            'view_item' => __('View Press'),
+            'search_items' => __('Search Press'),
+        );
+
+        $args = array(
+            'labels' => $labels,
+            'description' => 'Press posts',
+            'public' => true,
+            'supports' => array('title', 'editor', 'thumbnail', 'excerpt', 'comments', 'custom-fields'),
+            'has_archive' => true,
+            'show_in_admin_bar' => true,
+            'show_in_nav_menus' => true,
+            'show_in_rest' => true,
+            'query_var' => true,
+        );
+
+        register_post_type('press', $args);
+    }
+
 
     // hijack wp hooks
     add_action('after_setup_theme', 'mg_theme_support');
@@ -119,4 +147,5 @@
     add_action('wp_enqueue_scripts', 'mg_register_scripts');
     add_action('init', 'mg_menus');
     add_action('init', 'mg_post_type_artist');
+    add_action('init', 'mg_post_type_press');
 ?>

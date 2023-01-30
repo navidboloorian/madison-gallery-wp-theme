@@ -1,17 +1,37 @@
 document.addEventListener('DOMContentLoaded', function(event) {
+    bindMobileNavbarButtons();
     positionFooter();
     populateDetailsSidebar();
     preventReload();
 })
+
+/** Mobile Navbar Setup */
+const bindMobileNavbarButtons = () => {
+    const mobileNavbar = document.querySelector('#mobile-navbar');
+    const hamburgerButton = document.querySelector('#hamburger-icon');
+    const closeButton = document.querySelector('.close-button');
+
+    if(mobileNavbar && hamburgerButton && closeButton) {
+        console.log(mobileNavbar)
+
+        hamburgerButton.onclick = () => {
+            mobileNavbar.style.display = 'grid';
+        }
+
+        closeButton.onclick = () => {
+            mobileNavbar.style.display = 'none';
+        }
+    }
+}
 
 /** Position Footer */
 const positionFooter = () => {
     const mainWrapper = document.querySelector('#main-wrapper');
     const footer = document.querySelector('#footer-wrapper');
 
-    mainWrapper.style.minHeight = window.innerHeight - (132 + footer.clientHeight) + "px";
-
-    console.log(mainWrapper.style.minHeight);
+    if(window.innerWidth > 900) {
+        mainWrapper.style.minHeight = window.innerHeight - (132 + footer.clientHeight) + "px";
+    }
 }
 
 /** Details Sidebar */
@@ -62,7 +82,9 @@ const setDetailsSidebarDisplay = (content) => {
 const preventReload = () => {
     const form = document.querySelector("#mailing-list-form");
 
-    form.onsubmit = (e) => {
-        alert("Thank you for joining our mailing list!")
+    if(form) {
+        form.onsubmit = (e) => {
+            alert("Thank you for joining our mailing list!")
+        }
     }
 } 

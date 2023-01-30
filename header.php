@@ -25,5 +25,23 @@
                         )
                     );
                 ?>
+                <div id="hamburger-icon">
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                </div>
             </nav>
         </header>
+        <nav id="mobile-navbar">
+            <div class="close-button">+</div>
+            <?php
+                // retrieves the menu links wp admin
+                wp_nav_menu(
+                    array(
+                        'menu' => 'primary',
+                        'container' => '',
+                        'theme_location' => 'primary',
+                    )
+                );
+            ?>
+        </nav>
