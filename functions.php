@@ -31,7 +31,7 @@
 
     function mg_post_type_artist() {
         $labels = array(
-            'name' => __('Artist'),
+            'name' => __('Artists'),
             'singular_name' => __('Artist'),
             'add_new' => __('Add New Artist'),
             'add_new_item' => __('Add New Artist'),
@@ -43,7 +43,57 @@
         );
 
         $blockTemplate = array(
-            array('core/table')
+            array(
+                'core/group',
+                array(
+                    'align' => 'full',  
+                    'className' => 'details-sidebar-content',
+                ),
+                array( 
+                    array(
+                        'core/heading',
+                        array( 
+                            'content' => 'Featured Works',
+                        ),
+                    ),
+                    array(
+                        'core/group',
+                        array(
+                            'align' => 'full',  
+                            'className' => 'details-sidebar-display',
+                        ),
+                        array( 
+                            array(
+                                'core/paragraph',
+                                array(
+                                    ''
+                                ),
+                            ),
+                        ),
+                    ),
+                    array(
+                        'core/heading',
+                        array( 
+                            'content' => 'Bio/CV',
+                        ),
+                    ),
+                    array(
+                        'core/group',
+                        array(
+                            'align' => 'full',  
+                            'className' => 'details-sidebar-display',
+                        ),
+                        array( 
+                            array(
+                                'core/paragraph',
+                                array(
+                                    ''
+                                ),
+                            ),
+                        ),
+                    ),  
+                ),
+            ),
         );
 
         $args = array(
@@ -55,7 +105,6 @@
             'show_in_admin_bar' => true,
             'show_in_nav_menus' => true,
             'show_in_rest' => true,
-            'template_lock' => true,
             'template' => $blockTemplate,
             'query_var' => true,
         );

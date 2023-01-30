@@ -136,11 +136,13 @@ body
     text-align: center;
 }
 
+/** Details Sidebar **/
 .details-sidebar h1 
 {
     text-transform: uppercase;
     font-size: 18px;
     font-weight: lighter;
+    margin-top: 0px;
 }
 
 .details-sidebar ul 
@@ -152,7 +154,7 @@ body
     margin-top: 25px;       
 }
 
-.details-sidebar a 
+.details-sidebar li
 {
     color: #7d7d7b;
     text-decoration: none;
@@ -162,9 +164,15 @@ body
     display: block;
 }
 
-.details-sidebar a:hover 
+.details-sidebar li:hover 
 {
     color: #000000;
+    cursor: pointer;
+}
+
+.hidden
+{
+    display: none;
 }
 
 /** Artists Page **/
@@ -198,4 +206,19 @@ body
 {
     display: grid;
     grid-template-columns: 220px auto;
+    margin-top: 20px;
+}
+
+#artist-content h3 
+{
+    text-transform: uppercase;
+    font-size: 20px;
+    margin-top: 0px;
+}
+
+#artist-content p 
+{
+    color: #7d7d7b;
+    font-size: 14px;
+    margin-top: 0px;
 }
