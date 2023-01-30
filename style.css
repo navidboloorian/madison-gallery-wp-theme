@@ -172,6 +172,14 @@ body
     cursor: pointer;
 }
 
+.details-sidebar p 
+{
+    color: #696969;
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 188%;
+}
+
 .hidden
 {
     display: none;
@@ -256,4 +264,11 @@ body
     text-transform: uppercase;
     padding: 7px 14px;
     border: 0px;
+}
+
+/** About Page **/
+#about-grid 
+{
+    display: grid;
+    grid-template-columns: 200px auto;
 }

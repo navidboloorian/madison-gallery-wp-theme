@@ -10,7 +10,7 @@
 ?>
 <div id="contact-grid">
     <div class="details-sidebar">
-        <h1 class="sidebar-header">Contact</h1>
+        <h1 class="sidebar-header"><?php the_title(); ?></h1>
     </div>
     <div id="contact-content">
         <p>To receive invitations for future exhibitions and email updates about news and more please sign up for our mailing list.</p>
