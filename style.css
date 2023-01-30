@@ -74,6 +74,8 @@ body
 
 #footer-wrapper
 {
+    position: relative;
+    bottom: 0;
     background-color: #000000;
     width: 100%;
     color: white;
@@ -136,8 +138,7 @@ body
     text-align: center;
 }
 
-/** Details Sidebar **/
-.details-sidebar h1 
+.sidebar-header 
 {
     text-transform: uppercase;
     font-size: 18px;
@@ -145,6 +146,7 @@ body
     margin-top: 0px;
 }
 
+/** Details Sidebar **/
 .details-sidebar ul 
 {
     padding: 0px;
@@ -221,4 +223,43 @@ body
     color: #7d7d7b;
     font-size: 14px;
     margin-top: 0px;
+}
+
+/** Contact Page **/
+#contact-grid 
+{
+    display: grid;
+    grid-template-columns: 200px auto;
+}
+
+#contact-sidebar h1 
+{
+    text-transform: uppercase;
+}
+
+#contact-content p 
+{
+    color: #7d7d7b;
+    font-size: 14px;
+    margin-top: 0px;
+}
+
+#mailing-list-form input[type="text"], input[type="email"]
+{
+    padding: 10px;
+    background-color: #f1f1f1;
+    color: #6a6a6a;
+    border: 0px;
+    margin-bottom: 10px;
+    width: calc(100% - 20px);
+}
+
+#mailing-list-form input[type="submit"]
+{
+    background-color: #9b9b9b;
+    font-size: 12px;
+    color: #ffffff;
+    text-transform: uppercase;
+    padding: 7px 14px;
+    border: 0px;
 }

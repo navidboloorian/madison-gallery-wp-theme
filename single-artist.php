@@ -5,7 +5,7 @@
 <div id="main-wrapper">
     <div id="artist-wrapper">
         <div class="details-sidebar">
-            <h1><?php the_title(); ?></h1>
+            <h1 class="sidebar-header"><?php the_title(); ?></h1>
             <ul>
             </ul>
         </div>

@@ -1,6 +1,18 @@
 document.addEventListener('DOMContentLoaded', function(event) {
+    positionFooter();
     populateDetailsSidebar();
+    preventReload();
 })
+
+/** Position Footer */
+const positionFooter = () => {
+    const mainWrapper = document.querySelector('#main-wrapper');
+    const footer = document.querySelector('#footer-wrapper');
+
+    mainWrapper.style.minHeight = window.innerHeight - (100 + footer.clientHeight) + "px";
+
+    console.log(mainWrapper.style.minHeight);
+}
 
 /** Details Sidebar */
 const populateDetailsSidebar = () => {
@@ -45,3 +57,12 @@ const setDetailsSidebarDisplay = (content) => {
         artistContent.appendChild(display);
     }
 }
+
+/** Prevent Form Reload */
+const preventReload = () => {
+    const form = document.querySelector("#mailing-list-form");
+
+    form.onsubmit = (e) => {
+        alert("Thank you for joining our mailing list!")
+    }
+} 
