@@ -29,9 +29,7 @@ const positionFooter = () => {
     const mainWrapper = document.querySelector('#main-wrapper');
     const footer = document.querySelector('#footer-wrapper');
 
-    if(window.innerWidth > 900) {
-        mainWrapper.style.minHeight = window.innerHeight - (132 + footer.clientHeight) + "px";
-    }
+    mainWrapper.style.minHeight = window.innerHeight - (100 + footer.clientHeight) + "px";
 }
 
 /** Details Sidebar */

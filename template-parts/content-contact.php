@@ -20,6 +20,7 @@
             <input type="submit" name="mailing-list-submit" value="submit">
         </form>
         <hr>
+        <!--This method is used to avoid bots from crawling emails-->
         <p>Direct inquiries to <a href="javascript:window.location.href = 'mailto:' + ['info','madisongallery.com'].join('@')">info<!---->@<!---->madisongallery.com</a>.</p>
     </div>
 </div>
