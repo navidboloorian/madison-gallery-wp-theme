@@ -455,4 +455,31 @@ body
     {
         text-align: center;
     }
+    
+    /** Mobile Artists Page **/
+    #artists-image-grid 
+    {
+        display: grid;
+        width: 100%;
+        grid-template-columns: 1fr;
+        gap: 0px;
+    }
+
+    .artists-image-link 
+    {
+        text-align: center;
+        text-decoration: none;
+    }
+
+    .artists-image 
+    {
+        width: 100%;
+    }
+
+    .artists-name 
+    {
+        font-size: 11px;
+        color: #696969;
+        text-transform: uppercase;
+    }
 }
