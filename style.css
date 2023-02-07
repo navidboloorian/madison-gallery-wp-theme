@@ -673,4 +673,34 @@ body
     {
         text-align: center;
     }
+
+    /** Mobile Exhibitions Page **/
+    .exhibition-image-link h1
+    {
+        font-size: 18px;
+    }
+
+    .exhibition-image-link h2, h3
+    {
+        font-size: 13px;
+    }
+    .exhibitions-grid 
+    {
+        margin-top: 20px;
+        width: 100%;
+        display: grid;
+        grid-template-columns: auto;
+        gap: 10px;
+    }
+
+    /** Mobile Exhibition Page **/
+    #exhibition-wrapper h1
+    {
+        font-size: 18px;
+    }
+
+    #exhibition-wrapper h2, h3
+    {
+        font-size: 13px;
+    }
 }
