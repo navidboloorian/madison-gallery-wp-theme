@@ -112,22 +112,22 @@
         register_post_type('artist', $args);
     }
 
-    function mg_post_type_press() {
+    function mg_post_type_news() {
         $labels = array(
-            'name' => __('Press'),
-            'singular_name' => __('Press'),
-            'add_new' => __('Add New Press'),
-            'add_new_item' => __('Add New Press'),
-            'edit_item' => __('Edit Press'),
-            'new_item' => __('New Press'),
-            'all_items' => __('All Press'),
-            'view_item' => __('View Press'),
-            'search_items' => __('Search Press'),
+            'name' => __('News'),
+            'singular_name' => __('News'),
+            'add_new' => __('Add New News'),
+            'add_new_item' => __('Add New News'),
+            'edit_item' => __('Edit News'),
+            'new_item' => __('New News'),
+            'all_items' => __('All News'),
+            'view_item' => __('View News'),
+            'search_items' => __('Search News'),
         );
 
         $args = array(
             'labels' => $labels,
-            'description' => 'Press posts',
+            'description' => 'News posts',
             'public' => true,
             'supports' => array('title', 'editor', 'thumbnail', 'excerpt', 'comments', 'custom-fields'),
             'has_archive' => true,
@@ -135,12 +135,13 @@
             'show_in_nav_menus' => true,
             'show_in_rest' => true,
             'query_var' => true,
+            'taxonomies' => array('post_tag')
         );
 
-        register_post_type('press', $args);
+        register_post_type('news', $args);
     }
 
-    function mg_post_type_exhibitions() {
+    function mg_post_type_exhibition() {
         $labels = array(
             'name' => __('Exhibitions'),
             'singular_name' => __('Exhibition'),
@@ -211,6 +212,70 @@
         register_post_type('exhibition', $args);
     }
 
+    function mg_post_type_fair() {
+        $labels = array(
+            'name' => __('Fairs'),
+            'singular_name' => __('Fair'),
+            'add_new' => __('Add New Fair'),
+            'add_new_item' => __('Add New Fair'),
+            'edit_item' => __('Edit Fair'),
+            'new_item' => __('New Fair'),
+            'all_items' => __('All Fairs'),
+            'view_item' => __('View Fair'),
+            'search_items' => __('Search Fairs'),
+        );
+
+        $blockTemplate = array(
+            array(
+                'core/group',
+                array(
+                    'align' => 'full',  
+                    'className' => 'fair-heading',
+                ),
+                array( 
+                    array(
+                        'core/heading',
+                        array( 
+                            'content' => 'Date',
+                            'className' => 'fair-date'
+                        ),
+                    ),
+                    array(
+                        'core/group',
+                        array(
+                            'align' => 'full',  
+                            'className' => 'fair-content',
+                        ),
+                        array( 
+                            array(
+                                'core/paragraph',
+                                array(
+                                    ''
+                                ),
+                            ),
+                        ),
+                    ),
+                ),
+            ),
+        );
+
+        $args = array(
+            'labels' => $labels,
+            'description' => 'Fair posts',
+            'public' => true,
+            'supports' => array('title', 'editor', 'thumbnail', 'excerpt', 'comments', 'custom-fields'),
+            'has_archive' => true,
+            'show_in_admin_bar' => true,
+            'show_in_nav_menus' => true,
+            'show_in_rest' => true,
+            'query_var' => true,
+            'template' => $blockTemplate,
+            'taxonomies' => array('post_tag')
+        );
+
+        register_post_type('fair', $args);
+    }
+
 
     // hijack wp hooks
     add_action('after_setup_theme', 'mg_theme_support');
@@ -218,6 +283,7 @@
     add_action('wp_enqueue_scripts', 'mg_register_scripts');
     add_action('init', 'mg_menus');
     add_action('init', 'mg_post_type_artist');
-    add_action('init', 'mg_post_type_press');
-    add_action('init', 'mg_post_type_exhibitions');
+    add_action('init', 'mg_post_type_news');
+    add_action('init', 'mg_post_type_exhibition');
+    add_action('init', 'mg_post_type_fair');
 ?>

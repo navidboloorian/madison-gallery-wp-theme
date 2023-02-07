@@ -352,11 +352,60 @@ body
     grid-template-columns: 200px auto;
 }
 
-/** Press Page **/
-#press-grid 
+/** News Page **/
+#news-grid 
 {
     display: grid;
     grid-template-columns: 200px auto;
+}
+
+.news-tag 
+{
+    color: #7b7b7b;
+    font-size: 12px;
+    line-height: 300%;
+}
+
+.news-link 
+{
+    text-decoration: none;
+    color: black;
+}
+
+.news-result 
+{
+    display: grid;
+    grid-template-columns: 156px auto;
+    gap: 75px;
+}
+
+.news-image 
+{
+    height: 166px;
+    width: 156px;
+    background-size: cover !important;
+    background-position: center !important;
+    background-repeat: no-repeat !important;
+}
+
+.news-result-text 
+{
+    display: grid;
+    align-items: center;
+}
+
+.news-result-text h2 
+{
+    text-transform: none;
+    font-weight: 400;
+    font-size: 14px;
+    color: #7b7b7b;
+    line-height: 240%;
+}
+
+.news-image 
+{
+    width: 100%;
 }
 
 /** Mid-Sized Screens **/

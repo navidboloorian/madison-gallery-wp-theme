@@ -1,6 +1,7 @@
 document.addEventListener('DOMContentLoaded', function(event) {
     bindMobileNavbarButtons();
     positionFooter();
+    setFairDetails();
     setExhibitionDetails();
     setExhibitionContent();
     populateDetailsSidebar();
@@ -30,6 +31,22 @@ const positionFooter = () => {
     const footer = document.querySelector('#footer-wrapper');
 
     mainWrapper.style.minHeight = window.innerHeight - (100 + footer.clientHeight) + "px";
+}
+
+/** Fairs */
+const setFairDetails = () => {
+    const fairWrapper = document.querySelector('#fair-wrapper');
+
+    if(fairWrapper) {
+        const fairDates = document.querySelectorAll('.fair-date');
+
+        for(let i = 0; i < fairDates.length; i++) {
+            const fairDate = fairDates[i];
+
+            const parentElement = fairDate.parentElement.parentElement.parentElement.parentElement;
+            parentElement.querySelector('.fair-date-display').innerHTML = fairDate.textContent;
+        }
+    }
 }
 
 /** Exhibitions */

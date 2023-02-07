@@ -57,9 +57,6 @@
 
         wp_reset_postdata();
 
-        echo "<hr>";
-        echo "<h3 class='exhibition-group-label'>Upcoming</h3>";
-
         // get upcoming exhibitions
         $args = array(
             'post_type' => 'exhibition',
@@ -70,6 +67,11 @@
         );
 
         $loop = new WP_Query($args);
+
+        if($loop->have_posts()) {
+            echo "<hr>";
+            echo "<h3 class='exhibition-group-label'>Upcoming</h3>";
+        }
 
         echo "<div class='exhibitions-grid'>";
         while ($loop->have_posts()) {
@@ -95,9 +97,6 @@
 
         wp_reset_postdata();
 
-        echo "<hr>";
-        echo "<h3 class='exhibition-group-label'>Past</h3>";
-
         // get past exhibitions
         $args = array(
             'post_type' => 'exhibition',
@@ -108,6 +107,11 @@
         );
 
         $loop = new WP_Query($args);
+
+        if($loop->have_posts()) {
+            echo "<hr>";
+            echo "<h3 class='exhibition-group-label'>Past</h3>";
+        }
 
         echo "<div class='exhibitions-grid'>";
         while ($loop->have_posts()) {
