@@ -366,6 +366,12 @@ body
     line-height: 300%;
 }
 
+#press-tag 
+{
+    color: #7b7b7b;
+    font-size: 16px;
+}
+
 .news-link 
 {
     text-decoration: none;
@@ -655,5 +661,16 @@ body
     #contact-content 
     {
         padding: 5px;
+    }
+
+    /** Mobile About Page **/
+    #about-grid 
+    {
+        grid-template-columns: auto;
+    }
+
+    .details-sidebar p 
+    {
+        text-align: center;
     }
 }

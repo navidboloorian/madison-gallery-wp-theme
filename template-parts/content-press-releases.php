@@ -1,11 +1,11 @@
 <div id="news-grid">
     <div class="details-sidebar">
-        <h1 class="sidebar-header"><?php the_title(); ?></h1>
+        <h1 class="sidebar-header">Press</h1>
     </div>
     <div id="news-content">
         <?php 
             $args = array(
-                'post_type' => 'news',
+                'post_type' => 'press-release',
                 'orderby' => 'date',
                 'order' => 'DESC',
                 'numberposts' => '-1',

@@ -112,22 +112,22 @@
         register_post_type('artist', $args);
     }
 
-    function mg_post_type_news() {
+    function mg_post_type_press_release() {
         $labels = array(
-            'name' => __('News'),
-            'singular_name' => __('News'),
-            'add_new' => __('Add New News'),
-            'add_new_item' => __('Add New News'),
-            'edit_item' => __('Edit News'),
-            'new_item' => __('New News'),
-            'all_items' => __('All News'),
-            'view_item' => __('View News'),
-            'search_items' => __('Search News'),
+            'name' => __('Press Releases'),
+            'singular_name' => __('Press Release'),
+            'add_new' => __('Add New Press Release'),
+            'add_new_item' => __('Add New Press Release'),
+            'edit_item' => __('Edit Press Release'),
+            'new_item' => __('New Press Release'),
+            'all_items' => __('All Press Releases'),
+            'view_item' => __('View Press Release'),
+            'search_items' => __('Search Press Releases'),
         );
 
         $args = array(
             'labels' => $labels,
-            'description' => 'News posts',
+            'description' => 'Press release posts',
             'public' => true,
             'supports' => array('title', 'editor', 'thumbnail', 'excerpt', 'comments', 'custom-fields'),
             'has_archive' => true,
@@ -138,7 +138,7 @@
             'taxonomies' => array('post_tag')
         );
 
-        register_post_type('news', $args);
+        register_post_type('press-release', $args);
     }
 
     function mg_post_type_exhibition() {
@@ -283,7 +283,7 @@
     add_action('wp_enqueue_scripts', 'mg_register_scripts');
     add_action('init', 'mg_menus');
     add_action('init', 'mg_post_type_artist');
-    add_action('init', 'mg_post_type_news');
+    add_action('init', 'mg_post_type_press_release');
     add_action('init', 'mg_post_type_exhibition');
     add_action('init', 'mg_post_type_fair');
 ?>
