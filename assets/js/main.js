@@ -2,6 +2,7 @@ document.addEventListener('DOMContentLoaded', function(event) {
     bindMobileNavbarButtons();
     positionFooter();
     setExhibitionDetails();
+    setExhibitionContent();
     populateDetailsSidebar();
     preventReload();
 })
@@ -13,8 +14,6 @@ const bindMobileNavbarButtons = () => {
     const closeButton = document.querySelector('.close-button');
 
     if(mobileNavbar && hamburgerButton && closeButton) {
-        console.log(mobileNavbar)
-
         hamburgerButton.onclick = () => {
             mobileNavbar.style.display = 'grid';
         }
@@ -35,10 +34,12 @@ const positionFooter = () => {
 
 /** Exhibitions */
 const setExhibitionDetails = () => {
-    const exhibitionArtists = document.querySelectorAll('.exhibition-artist');
-    const exhibitionDates = document.querySelectorAll('.exhibition-date');
+    const exhibitionsWrapper = document.querySelector('#exhibitions-wrapper');
 
-    if(exhibitionArtists) {
+    if(exhibitionsWrapper) {
+        const exhibitionArtists = document.querySelectorAll('.exhibition-artist');
+        const exhibitionDates = document.querySelectorAll('.exhibition-date');
+
         for(let i = 0; i < exhibitionArtists.length; i++) {
             const exhibitionArtist = exhibitionArtists[i];
             const exhibitionDate = exhibitionDates[i];
@@ -47,6 +48,25 @@ const setExhibitionDetails = () => {
             parentElement.querySelector('.exhibition-artist-name').innerHTML = exhibitionArtist.textContent;
             parentElement.querySelector('.exhibition-date-display').innerHTML = exhibitionDate.textContent;
         }
+    }
+}
+
+/** Exhibition */
+const setExhibitionContent = () => {
+    const exhibitionContent = document.querySelector('#exhibition-content');
+
+    if(exhibitionContent) {
+        const exhibitionArtist = document.querySelector('#exhibition-artist');
+        const exhibitionDate = document.querySelector('#exhibition-date');
+
+        const exhibitionContentTemplate = document.querySelector('.exhibition-content');
+        const exhibitionArtistTemplate = document.querySelector('.exhibition-artist');
+        const exhibitionDateTempalte = document.querySelector('.exhibition-date');
+        
+        exhibitionArtist.innerHTML = exhibitionArtistTemplate.textContent;
+        exhibitionDate.innerHTML = exhibitionDateTempalte.textContent;
+
+        exhibitionContent.appendChild(exhibitionContentTemplate);
     }
 }
 
@@ -76,8 +96,6 @@ const populateDetailsSidebar = () => {
 
             sidebarList.appendChild(sidebarHeader);
         }
-
-        console.log(sidebarHeaders);
     }
 }
 
@@ -86,8 +104,6 @@ const setDetailsSidebarDisplay = (content) => {
 
     if(artistContent) {
         const display = content.nextElementSibling.cloneNode(true);
-
-        console.log(display);
 
         artistContent.innerHTML = "";
         artistContent.appendChild(display);

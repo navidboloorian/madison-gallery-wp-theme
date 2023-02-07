@@ -287,6 +287,30 @@ body
     gap: 10px;
 }
 
+/** Exhibition Page **/
+#exhibition-wrapper h1, h2, h3
+{
+    margin: 0px;
+    text-transform: uppercase;
+}
+
+#exhibition-wrapper h2 
+{
+    font-style: italic !important;
+}
+
+#exhibition-wrapper h3 
+{
+    font-style: italic;
+    font-weight: lighter;
+    color: #7d7d7b;
+}
+
+#exhibition-image 
+{
+    width: 100%;
+}
+
 /** Contact Page **/
 #contact-grid 
 {

@@ -2,7 +2,7 @@
     <?php 
         // get current exhibitions
         $args = array(
-            'post_type' => 'exhibitions',
+            'post_type' => 'exhibition',
             'orderby' => 'date',
             'order' => 'DESC',
             'tag' => 'current',
@@ -60,9 +60,9 @@
         echo "<hr>";
         echo "<h3 class='exhibition-group-label'>Upcoming</h3>";
 
-        // get current exhibitions
+        // get upcoming exhibitions
         $args = array(
-            'post_type' => 'exhibitions',
+            'post_type' => 'exhibition',
             'orderby' => 'date',
             'order' => 'DESC',
             'tag' => 'upcoming',
@@ -100,7 +100,7 @@
 
         // get past exhibitions
         $args = array(
-            'post_type' => 'exhibitions',
+            'post_type' => 'exhibition',
             'orderby' => 'date',
             'order' => 'DESC',
             'tag' => 'past',

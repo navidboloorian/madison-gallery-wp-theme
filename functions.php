@@ -208,7 +208,7 @@
             'taxonomies' => array('post_tag')
         );
 
-        register_post_type('exhibitions', $args);
+        register_post_type('exhibition', $args);
     }
 
 
