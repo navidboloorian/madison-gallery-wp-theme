@@ -140,7 +140,7 @@
         register_post_type('press', $args);
     }
 
-    function mg_post_type_exhibition() {
+    function mg_post_type_exhibitions() {
         $labels = array(
             'name' => __('Exhibitions'),
             'singular_name' => __('Exhibition'),
@@ -208,7 +208,7 @@
             'taxonomies' => array('post_tag')
         );
 
-        register_post_type('exhibition', $args);
+        register_post_type('exhibitions', $args);
     }
 
 
@@ -219,5 +219,5 @@
     add_action('init', 'mg_menus');
     add_action('init', 'mg_post_type_artist');
     add_action('init', 'mg_post_type_press');
-    add_action('init', 'mg_post_type_exhibition');
+    add_action('init', 'mg_post_type_exhibitions');
 ?>

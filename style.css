@@ -30,6 +30,7 @@ body
 {
     width: 900px;
     justify-self: center;
+    margin-bottom: 20px;
 }
 
 #header-wrapper
@@ -240,6 +241,50 @@ body
     color: #7d7d7b;
     font-size: 14px;
     margin-top: 0px;
+}
+
+/** Exhibitions Page **/
+#featured-exhibition 
+{
+    width: 100%;
+}
+
+#featured-exhibition img 
+{
+    width: 100%;
+}
+
+.exhibition-image-link 
+{
+    color: black;
+    text-decoration: none;
+}
+
+.exhibition-image-link h1, h2, h3, h4, h5, h6
+{
+    margin: 0px;
+    text-transform: uppercase;
+}
+
+.exhibition-artist-name 
+{
+    font-style: italic;
+}
+
+.exhibition-tag
+{
+    font-weight: lighter;
+    color: #7d7d7b;
+    font-style: italic;
+}
+
+.exhibitions-grid 
+{
+    margin-top: 20px;
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
 }
 
 /** Contact Page **/

@@ -1,6 +1,7 @@
 document.addEventListener('DOMContentLoaded', function(event) {
     bindMobileNavbarButtons();
     positionFooter();
+    setExhibitionDetails();
     populateDetailsSidebar();
     preventReload();
 })
@@ -30,6 +31,23 @@ const positionFooter = () => {
     const footer = document.querySelector('#footer-wrapper');
 
     mainWrapper.style.minHeight = window.innerHeight - (100 + footer.clientHeight) + "px";
+}
+
+/** Exhibitions */
+const setExhibitionDetails = () => {
+    const exhibitionArtists = document.querySelectorAll('.exhibition-artist');
+    const exhibitionDates = document.querySelectorAll('.exhibition-date');
+
+    if(exhibitionArtists) {
+        for(let i = 0; i < exhibitionArtists.length; i++) {
+            const exhibitionArtist = exhibitionArtists[i];
+            const exhibitionDate = exhibitionDates[i];
+
+            const parentElement = exhibitionArtist.parentElement.parentElement.parentElement.parentElement;
+            parentElement.querySelector('.exhibition-artist-name').innerHTML = exhibitionArtist.textContent;
+            parentElement.querySelector('.exhibition-date-display').innerHTML = exhibitionDate.textContent;
+        }
+    }
 }
 
 /** Details Sidebar */
