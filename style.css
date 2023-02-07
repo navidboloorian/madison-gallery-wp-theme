@@ -459,7 +459,6 @@ body
     /** Mobile Artists Page **/
     #artists-image-grid 
     {
-        display: grid;
         width: 100%;
         grid-template-columns: 1fr;
         gap: 0px;
@@ -468,18 +467,75 @@ body
     .artists-image-link 
     {
         text-align: center;
+    }
+
+    /** Mobile Artist Page **/
+    #artist-wrapper 
+    {
+        display: grid;
+        grid-template-columns: 1fr;
+    }
+
+    #artist-content 
+    {
+        padding: 5px;
+    }
+
+    #artist-content h3 
+    {
+        text-align: center;
+    }
+
+    #artist-content p 
+    {
+        color: #7d7d7b;
+        font-size: 14px;
+        margin-top: 0px;
+    }
+
+    /** Mobile Details Sidebar **/
+    .sidebar-header
+    {
+        text-align: center;
+    }
+
+    .details-sidebar ul 
+    {
+       text-align: center; 
+    }
+
+    .details-sidebar li
+    {
+        color: #7d7d7b;
         text-decoration: none;
+        font-weight: 600;
+        font-size: 12px;
+        height: 28px;
+        display: block;
     }
 
-    .artists-image 
+    .details-sidebar li:hover 
     {
-        width: 100%;
+        color: #000000;
+        cursor: pointer;
     }
 
-    .artists-name 
+    .details-sidebar p 
     {
-        font-size: 11px;
         color: #696969;
-        text-transform: uppercase;
+        font-weight: 400;
+        font-size: 12px;
+        line-height: 188%;
+    }
+
+    /** Mobile Contact Page **/
+    #contact-grid 
+    {
+        grid-template-columns: auto;
+    }
+
+    #contact-content 
+    {
+        padding: 5px;
     }
 }
