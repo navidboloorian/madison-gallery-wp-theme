@@ -140,6 +140,77 @@
         register_post_type('press', $args);
     }
 
+    function mg_post_type_exhibition() {
+        $labels = array(
+            'name' => __('Exhibitions'),
+            'singular_name' => __('Exhibition'),
+            'add_new' => __('Add New Exhibition'),
+            'add_new_item' => __('Add New Exhibition'),
+            'edit_item' => __('Edit Exhibition'),
+            'new_item' => __('New Exhibition'),
+            'all_items' => __('All Exhibitions'),
+            'view_item' => __('View Exhibition'),
+            'search_items' => __('Search Exhibitions'),
+        );
+
+        $blockTemplate = array(
+            array(
+                'core/group',
+                array(
+                    'align' => 'full',  
+                    'className' => 'exhibition-heading',
+                ),
+                array( 
+                    array(
+                        'core/heading',
+                        array( 
+                            'content' => 'Artist Name',
+                            'className' => 'exhibition-artist'
+                        ),
+                    ),
+                    array(
+                        'core/heading',
+                        array( 
+                            'content' => 'Date',
+                            'className' => 'exhibition-date'
+                        ),
+                    ),
+                    array(
+                        'core/group',
+                        array(
+                            'align' => 'full',  
+                            'className' => 'exhibition-content',
+                        ),
+                        array( 
+                            array(
+                                'core/paragraph',
+                                array(
+                                    ''
+                                ),
+                            ),
+                        ),
+                    ),
+                ),
+            ),
+        );
+
+        $args = array(
+            'labels' => $labels,
+            'description' => 'Exhibition posts',
+            'public' => true,
+            'supports' => array('title', 'editor', 'thumbnail', 'excerpt', 'comments', 'custom-fields'),
+            'has_archive' => true,
+            'show_in_admin_bar' => true,
+            'show_in_nav_menus' => true,
+            'show_in_rest' => true,
+            'query_var' => true,
+            'template' => $blockTemplate,
+            'taxonomies' => array('post_tag')
+        );
+
+        register_post_type('exhibition', $args);
+    }
+
 
     // hijack wp hooks
     add_action('after_setup_theme', 'mg_theme_support');
@@ -148,4 +219,5 @@
     add_action('init', 'mg_menus');
     add_action('init', 'mg_post_type_artist');
     add_action('init', 'mg_post_type_press');
+    add_action('init', 'mg_post_type_exhibition');
 ?>
