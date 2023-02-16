@@ -69,7 +69,7 @@
         $loop = new WP_Query($args);
 
         if($loop->have_posts()) {
-            echo "<hr>";
+            echo "<br>";
             echo "<h3 class='exhibition-group-label'>Upcoming</h3>";
         }
 

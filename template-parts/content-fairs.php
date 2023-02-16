@@ -11,6 +11,10 @@
 
         $loop = new WP_Query($args);
 
+        if($loop->have_posts()) {
+            echo "<h3 class='exhibition-group-label'>Current</h3>";
+        }
+
         echo "<div class='exhibitions-grid'>";
         while ($loop->have_posts()) {
             $loop->the_post();
@@ -44,7 +48,7 @@
         $loop = new WP_Query($args);
 
         if($loop->have_posts()) {
-            echo "<hr>";
+            echo "<br>";
             echo "<h3 class='exhibition-group-label'>Upcoming</h3>";
         }
 
@@ -59,7 +63,7 @@
             echo "<a class='exhibition-image-link' href = '".$fairUrl."'>";
             echo "<img class='artists-image' src='".$imgUrl."'>";
             echo "<h4 id='featured-exhibition-title'>".$fairTitle."</h4>"; 
-            echo "<h6 class='exhibition-date-display exhibition-tag'></h6>";
+            echo "<h6 class='fair-date-display exhibition-tag'></h6>";
             echo "<div class='hidden'>";
             echo the_content();
             echo "</div>";
@@ -96,7 +100,7 @@
             echo "<a class='exhibition-image-link' href = '".$fairUrl."'>";
             echo "<img class='artists-image' src='".$imgUrl."'>";
             echo "<h4 id='featured-exhibition-title'>".$fairTitle."</h4>"; 
-            echo "<h6 class='exhibition-date-display exhibition-tag'></h6>";
+            echo "<h6 class='fair-date-display exhibition-tag'></h6>";
             echo "<div class='hidden'>";
             echo the_content();
             echo "</div>";

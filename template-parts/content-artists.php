@@ -17,7 +17,7 @@
             $imgUrl = get_the_post_thumbnail_url();
 
             echo "<a class='artists-image-link' href = '".$artistUrl."'>";
-            echo "<img class='artists-image' src='".$imgUrl."'>";
+            echo "<img class='artists-grid-image' src='".$imgUrl."'>";
             echo "<p class='artists-name'>".$artistName."</p>";
             echo "</a>";
         }
