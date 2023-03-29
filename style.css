@@ -763,6 +763,45 @@ hr
         margin-top: 0px;
     }
 
+    #current-image 
+    {
+        width: 100%;
+        height: auto;
+    }
+
+    #artwork-description
+    {
+        margin-top: 10px;
+    }
+
+    #artwork-gallery-buttons 
+    {
+        justify-content: center;
+        margin-top: 10px;
+    }
+
+    #artwork-gallery-navigation 
+    {
+        position: relative;
+        top: 0px;
+        width: 100%;
+        text-align: center;
+    }
+
+    #artwork-gallery-grid-display 
+    {
+        display: grid;
+        gap: 10px;
+        grid-template-columns: 1fr;
+    }
+
+    #artwork-gallery-grid-display img 
+    {
+        width: 100%;
+        height: auto;
+        cursor: pointer;
+    }
+
     /** Mobile Details Sidebar **/
     .sidebar-header
     {
