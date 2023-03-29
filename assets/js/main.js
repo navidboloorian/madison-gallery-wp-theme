@@ -142,7 +142,7 @@ const setDetailsSidebarDisplay = (content) => {
                         <div></div>
                         <button id='artwork-gallery-grid'></button>
                         <span id='artwork-gallery-counter'>
-                            ${currentArtIndex + 1}/${artworks.length}
+                            ${currentArtIndex + 1} / ${artworks.length}
                         </span>
                     </div>
                     <div id='artwork-description'>${artworks[currentArtIndex].firstChild.alt}</div>
@@ -175,7 +175,7 @@ const setDetailsSidebarDisplay = (content) => {
                     
                     currentArtIndex = i;
                     currentImage.setAttribute('src', artworks[i].firstChild.src);
-                    artworkGalleryCounter.innerHTML = `${currentArtIndex + 1}/${artworks.length}`;
+                    artworkGalleryCounter.innerHTML = `${currentArtIndex + 1} / ${artworks.length}`;
                     artworkDescription.innerHTML = `${artworks[imageIndex].firstChild.alt}`;
                 }
             }
@@ -190,7 +190,7 @@ const setDetailsSidebarDisplay = (content) => {
 
                 
                 currentImage.setAttribute('src', artworks[currentArtIndex].firstChild.src);
-                artworkGalleryCounter.innerHTML = `${currentArtIndex + 1}/${artworks.length}`;
+                artworkGalleryCounter.innerHTML = `${currentArtIndex + 1} / ${artworks.length}`;
                 artworkDescription.innerHTML = `${artworks[currentArtIndex].firstChild.alt}`;
             }
 
@@ -203,7 +203,7 @@ const setDetailsSidebarDisplay = (content) => {
                 }
 
                 currentImage.setAttribute('src', artworks[currentArtIndex].firstChild.src);
-                artworkGalleryCounter.innerHTML = `${currentArtIndex + 1}/${artworks.length}`;
+                artworkGalleryCounter.innerHTML = `${currentArtIndex + 1} / ${artworks.length}`;
                 artworkDescription.innerHTML = `${artworks[currentArtIndex].firstChild.alt}`;
             }
 

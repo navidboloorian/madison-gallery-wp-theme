@@ -21,7 +21,7 @@
         </form>
         <hr>
         <!--This method is used to avoid bots from crawling emails-->
-        <p>Direct inquiries to <a href="javascript:window.location.href = 'mailto:' + ['info','madisongallery.com'].join('@')">info<!---->@<!---->madisongallery.com</a>.</p>
+        <p>Direct inquiries to <a href="javascript:window.location.href = 'mailto:' + ['info','madisongalleries.com'].join('@')">info<!---->@<!---->madisongalleries.com</a>.</p>
     </div>
 </div>
 <?php 

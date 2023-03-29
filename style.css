@@ -38,6 +38,11 @@ body
     display: grid;
 }
 
+em, strong
+{
+    font-family: 'Source Sans Pro' !important;
+}
+
 #main-wrapper 
 {
     width: 900px;
@@ -106,6 +111,17 @@ li.current_page_item a
     padding-bottom: 35px; 
 }
 
+#footer-address 
+{
+    font-size: 14px;
+}
+
+#footer-address p > a 
+{
+    text-decoration: none;
+    color: #ffffff;
+}
+
 #footer-content 
 {
     width: 900px;
@@ -117,6 +133,7 @@ li.current_page_item a
     display: grid;
     font-size: 12px;
     grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
     border-bottom: 1px solid #ffffff;
 }
 
@@ -154,6 +171,22 @@ li.current_page_item a
 #footer-disclaimer 
 {
     text-align: center;
+}
+
+#footer-links
+{
+    display: grid;
+    gap: 5px;
+    grid-template-columns: 100px auto;
+}
+
+#social-media-links 
+{
+    display: grid;
+    grid-template-columns: repeat(3, 33px);
+    background-color: #ffffff;
+    justify-content: center;
+    width: 100px;
 }
 
 .sidebar-header 
@@ -251,15 +284,30 @@ li.current_page_item a
 /** Artist Page **/
 #artist-wrapper 
 {
+    margin-top: 30px;
     display: grid;
     grid-template-columns: 220px auto;
+}
+
+#artist-content 
+{
+    font-family: 'Source Sans Pro';
 }
 
 #artist-content h3 
 {
     text-transform: uppercase;
     font-size: 20px;
-    margin-top: 0px;
+    font-family: 'Source Sans Pro';
+    font-weight: normal;
+}
+
+#artist-content h1, #artist-content h2, #artist-content h3, #artist-content h4, #artist-content h5, #artist-content h6
+{
+    margin-top: 2em;
+    font-family: 'Source Sans Pro';
+    font-weight: normal;
+    text-transform: uppercase;
 }
 
 #artist-content p 
@@ -267,6 +315,8 @@ li.current_page_item a
     color: #7d7d7b;
     font-size: 14px;
     margin-top: 0px;
+    line-height: 240%;
+    font-family: 'Source Sans Pro';
 }
 
 #artwork-gallery-grid-display 
@@ -295,6 +345,7 @@ li.current_page_item a
 {
     position: absolute;
     top: 400px;
+    width: 220px;
 }
 
 #artwork-gallery-buttons 
@@ -371,7 +422,7 @@ li.current_page_item a
     font-family: 'Montserrat' !important;
 }
 
-.exhibition-image-link h1, h2, h3, h4, h5, h6
+.exhibition-image-link h1, .exhibition-image-link h2, .exhibition-image-link h3, .exhibition-image-link h4, .exhibition-image-link h5, .exhibition-image-link h6
 {
     margin: 0px;
     text-transform: uppercase;
@@ -406,6 +457,17 @@ hr
     gap: 10px;
 }
 
+/** Fair Page **/
+#fair-wrapper * 
+{
+    font-family: 'Playfair Display' !important;
+}
+
+.fair-date-display 
+{
+    font-weight: lighter;
+}
+
 /** Exhibition Page **/
 #exhibition-wrapper h1, h2, h3
 {
@@ -428,6 +490,11 @@ hr
     font-family: 'Playfair Display' !important;
 }
 
+#exhibition-wrapper * 
+{
+    font-family: 'Playfair Display' !important;
+}
+
 #exhibition-wrapper h2 
 {
     font-style: italic !important;
@@ -435,7 +502,6 @@ hr
 
 #exhibition-wrapper h3 
 {
-    font-style: italic;
     font-weight: lighter;
     color: #7d7d7b;
 }
@@ -800,6 +866,15 @@ hr
         width: 100%;
         height: auto;
         cursor: pointer;
+    }
+
+    #artist-content h1, #artist-content h2, #artist-content h3, #artist-content h4, #artist-content h5, #artist-content h6
+    {
+        margin-top: 0px;
+        font-family: 'Source Sans Pro';
+        font-weight: normal;
+        text-transform: uppercase;
+        text-align: left;
     }
 
     /** Mobile Details Sidebar **/

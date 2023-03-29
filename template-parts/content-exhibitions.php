@@ -25,7 +25,7 @@
             echo "<h3 id='featured-exhibition-tag' class='exhibition-tag'>".$exhibitionTag."</h3>";
             echo "<h1 id='featured-exhibition-title'>".$exhibitionTitle."</h2>";
             echo "<h2 id='featured-exhibition-artist' class='exhibition-artist-name'></h2>";
-            echo "<h3 class='exhibition-date-display exhibition-tag'></h3>";
+            echo "<h3 class='exhibition-date-display'></h3>";
             echo "</div>";
             echo "<div class='hidden'>";
             echo the_content();
@@ -47,7 +47,7 @@
             echo "<h6 id='featured-exhibition-tag' class='exhibition-tag'>".$exhibitionTag."</h6>";
             echo "<h4 id='featured-exhibition-title'>".$exhibitionTitle."</h4>";
             echo "<h5 id='featured-exhibition-artist' class='exhibition-artist-name'></h5>";
-            echo "<h6 class='exhibition-date-display exhibition-tag'></h6>";
+            echo "<h6 class='exhibition-date-display'></h6>";
             echo "<div class='hidden'>";
             echo the_content();
             echo "</div>";
@@ -87,7 +87,7 @@
             echo "<h6 id='featured-exhibition-tag' class='exhibition-tag'>".$exhibitionTag."</h6>";
             echo "<h4 id='featured-exhibition-title'>".$exhibitionTitle."</h4>";
             echo "<h5 id='featured-exhibition-artist' class='exhibition-artist-name'></h5>";
-            echo "<h6 class='exhibition-date-display exhibition-tag'></h6>";
+            echo "<h6 class='exhibition-date-display'></h6>";
             echo "<div class='hidden'>";
             echo the_content();
             echo "</div>";
@@ -127,7 +127,7 @@
             echo "<h6 id='featured-exhibition-tag' class='exhibition-tag'>".$exhibitionTag."</h6>";
             echo "<h4 id='featured-exhibition-title'>".$exhibitionTitle."</h4>";
             echo "<h5 id='featured-exhibition-artist' class='exhibition-artist-name'></h5>";
-            echo "<h6 class='exhibition-date-display exhibition-tag'></h6>";
+            echo "<h6 class='exhibition-date-display'></h6>";
             echo "<div class='hidden'>";
             echo the_content();
             echo "</div>";

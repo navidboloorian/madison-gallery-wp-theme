@@ -26,7 +26,7 @@
             echo "<a class='exhibition-image-link' href = '".$fairUrl."'>";
             echo "<img class='artists-image' src='".$imgUrl."'>";
             echo "<h4 id='featured-exhibition-title'>".$fairTitle."</h4>"; 
-            echo "<h6 class='fair-date-display exhibition-tag'></h6>";
+            echo "<h6 class='fair-date-display'></h6>";
             echo "<div class='hidden'>";
             echo the_content();
             echo "</div>";
@@ -63,7 +63,7 @@
             echo "<a class='exhibition-image-link' href = '".$fairUrl."'>";
             echo "<img class='artists-image' src='".$imgUrl."'>";
             echo "<h4 id='featured-exhibition-title'>".$fairTitle."</h4>"; 
-            echo "<h6 class='fair-date-display exhibition-tag'></h6>";
+            echo "<h6 class='fair-date-display'></h6>";
             echo "<div class='hidden'>";
             echo the_content();
             echo "</div>";
@@ -100,7 +100,7 @@
             echo "<a class='exhibition-image-link' href = '".$fairUrl."'>";
             echo "<img class='artists-image' src='".$imgUrl."'>";
             echo "<h4 id='featured-exhibition-title'>".$fairTitle."</h4>"; 
-            echo "<h6 class='fair-date-display exhibition-tag'></h6>";
+            echo "<h6 class='fair-date-display'></h6>";
             echo "<div class='hidden'>";
             echo the_content();
             echo "</div>";

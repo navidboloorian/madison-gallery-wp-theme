@@ -5,8 +5,8 @@
                         <p>
                             320 SOUTH CEDROS AVENUE, SUITE 200<br>
                             SOLANA BEACH, CA 92075<br>
-                            TEL 858 523 9155<br>
-                            INFO@MADISONGALLERIES.COM
+                            <a href="tel:8585239155">TEL 858 523 9155</a><br>
+                            <a href="javascript:window.location.href = 'mailto:' + ['info','madisongalleries.com'].join('@')">INFO<!----->@<!------>MADISONGALLERIES.COM</a>
                         </p>
                     </div>
                     <div id="footer-email">
@@ -14,7 +14,19 @@
                             To receive emails about updates, exhibitions, and more, sign up for our mailing list.
                         </p>
                     </div>
-                    <div id="footer-links"></div>
+                    <div id="footer-links">
+                        <div>
+                            <a href="https://www.artsy.net/madison-gallery"><img src=<?php echo get_template_directory_uri()."/assets/images/artsy-logo.jpg" ?>></a>
+                            <div id="social-media-links">
+                                <a href="https://www.facebook.com/MadisonGallery"><img src=<?php echo get_template_directory_uri()."/assets/images/facebook-icon.gif" ?>></a>
+                                <a href="http://instagram.com/madisongallery"><img src=<?php echo get_template_directory_uri()."/assets/images/instagram-icon.jpg" ?>></a>
+                                <a href="https://twitter.com/Madison_Gallery"><img src=<?php echo get_template_directory_uri()."/assets/images/twitter-icon.gif" ?>></a>
+                            </div>
+                        </div>
+                        <div>
+                            <img src=<?php echo get_template_directory_uri()."/assets/images/500-best-galleries.jpg" ?>>
+                        </div>
+                    </div>
                 </div>
                 <div class="footer-row" id="footer-artists-row">
                     <?php 
