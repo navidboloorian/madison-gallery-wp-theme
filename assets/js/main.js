@@ -136,12 +136,15 @@ const setDetailsSidebarDisplay = (content) => {
 
             artworkInfo.innerHTML = `
                 <div id='artwork-gallery-navigation'>
-                    <button id='artwork-gallery-decrement'><</button>
-                    <span id='artwork-gallery-counter'>
-                        ${currentArtIndex + 1}/${artworks.length}
-                    </span>
-                    <button id='artwork-gallery-increment'>></button>
-                    <button id='artwork-gallery-grid'>grid</button>
+                    <div id='artwork-gallery-buttons'>
+                        <button id='artwork-gallery-decrement'></button>
+                        <button id='artwork-gallery-increment'></button>
+                        <div></div>
+                        <button id='artwork-gallery-grid'></button>
+                        <span id='artwork-gallery-counter'>
+                            ${currentArtIndex + 1}/${artworks.length}
+                        </span>
+                    </div>
                     <div id='artwork-description'>${artworks[currentArtIndex].firstChild.alt}</div>
                 </div>`;
 
