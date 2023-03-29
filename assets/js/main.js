@@ -122,10 +122,101 @@ const setDetailsSidebarDisplay = (content) => {
     if(artistContent) {
         const display = content.nextElementSibling.cloneNode(true);
 
+        const artworkGallery = display.querySelector(".artwork-gallery");
+        const artworkInfo = document.querySelector("#artwork-info");
+
         artistContent.innerHTML = "";
-        artistContent.appendChild(display);
+        artworkInfo.innerHTML = "";
+
+        if(artworkGallery) {
+            const artworks = artworkGallery.children;
+
+            let currentArtIndex = 0;
+            artistContent.innerHTML = `<div id='artwork-gallery-grid-display'></div><img id='current-image' src='${artworks[currentArtIndex].firstChild.src}'>`;
+
+            artworkInfo.innerHTML = `
+                <div id='artwork-gallery-navigation'>
+                    <button id='artwork-gallery-decrement'><</button>
+                    <span id='artwork-gallery-counter'>
+                        ${currentArtIndex + 1}/${artworks.length}
+                    </span>
+                    <button id='artwork-gallery-increment'>></button>
+                    <button id='artwork-gallery-grid'>grid</button>
+                    <div id='artwork-description'>${artworks[currentArtIndex].firstChild.alt}</div>
+                </div>`;
+
+            const artworkGalleryGridDisplay = document.querySelector("#artwork-gallery-grid-display");
+            const artworkGalleryNavigation = document.querySelector("#artwork-gallery-navigation");
+            const artworkGalleryCounter = document.querySelector("#artwork-gallery-counter");
+            const artworkDescription = document.querySelector("#artwork-description");
+            const artworkGalleryDecrement = document.querySelector("#artwork-gallery-decrement");
+            const artworkGalleryIncrement = document.querySelector("#artwork-gallery-increment");
+            const artworkGalleryGrid = document.querySelector("#artwork-gallery-grid");
+            const currentImage = document.querySelector("#current-image");
+
+            artworkGalleryGridDisplay.style.display = 'none';
+
+            for(let i = 0; i < artworks.length; i++) {
+                artworkGalleryGridDisplay.innerHTML += `<img src='${artworks[i].firstChild.src}' class='artwork-gallery-grid-image' data-image-index='${i}'>`;
+            }
+
+            const artworkGalleryGridImages = artworkGalleryGridDisplay.querySelectorAll(".artwork-gallery-grid-image");
+
+            for(let i = 0; i < artworkGalleryGridImages.length; i++) {
+                artworkGalleryGridImages[i].onclick = () => {
+                    const imageIndex = parseInt(artworkGalleryGridImages[i].getAttribute("data-image-index"));
+
+                    currentImage.style.display = 'block';
+                    artworkGalleryGridDisplay.style.display = 'none';
+                    artworkGalleryNavigation.style.display = 'block';
+                    
+                    currentArtIndex = i;
+                    currentImage.setAttribute('src', artworks[i].firstChild.src);
+                    artworkGalleryCounter.innerHTML = `${currentArtIndex + 1}/${artworks.length}`;
+                    artworkDescription.innerHTML = `${artworks[imageIndex].firstChild.alt}`;
+                }
+            }
+
+            artworkGalleryDecrement.onclick = () => {
+                if(currentArtIndex > 0) {
+                    currentArtIndex--;
+                }
+                else {
+                    currentArtIndex = artworks.length - 1;
+                }
+
+                
+                currentImage.setAttribute('src', artworks[currentArtIndex].firstChild.src);
+                artworkGalleryCounter.innerHTML = `${currentArtIndex + 1}/${artworks.length}`;
+                artworkDescription.innerHTML = `${artworks[currentArtIndex].firstChild.alt}`;
+            }
+
+            artworkGalleryIncrement.onclick = () => {
+                if(currentArtIndex < artworks.length - 1) {
+                    currentArtIndex++;
+                }
+                else {
+                    currentArtIndex = 0;
+                }
+
+                currentImage.setAttribute('src', artworks[currentArtIndex].firstChild.src);
+                artworkGalleryCounter.innerHTML = `${currentArtIndex + 1}/${artworks.length}`;
+                artworkDescription.innerHTML = `${artworks[currentArtIndex].firstChild.alt}`;
+            }
+
+            artworkGalleryGrid.onclick = () => {
+                artworkGalleryNavigation.style.display = 'none';
+                artworkGalleryGridDisplay.style.display = 'grid';
+                currentImage.style.display = 'none';
+            }
+        }
+        else {
+            artistContent.appendChild(display);
+        }
     }
 }
+
+
 
 /** Prevent Form Reload */
 const preventReload = () => {

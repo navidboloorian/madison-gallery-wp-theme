@@ -232,6 +232,7 @@ li.current_page_item a
 {
     width: 100%;
     height: 110px;
+    object-fit: cover;
 }
 
 .artists-image 
@@ -266,6 +267,21 @@ li.current_page_item a
     color: #7d7d7b;
     font-size: 14px;
     margin-top: 0px;
+}
+
+#artwork-gallery-grid-display 
+{
+    display: grid;
+    gap: 10px;
+    grid-template-columns: repeat(4, 1fr);
+}
+
+#artwork-gallery-grid-display img 
+{
+    width: 150px;
+    height: 150px;
+    object-fit: contain;
+    cursor: pointer;
 }
 
 /** Exhibitions Page **/

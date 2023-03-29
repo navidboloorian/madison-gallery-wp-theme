@@ -8,6 +8,8 @@
             <h1 class="sidebar-header"><?php the_title(); ?></h1>
             <ul>
             </ul>
+            <div id="artwork-info">
+            </div>
         </div>
         <div id="artist-content">
         </div>

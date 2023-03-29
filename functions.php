@@ -66,7 +66,7 @@
                             array(
                                 'core/gallery',
                                 array(
-                                    ''
+                                    'className' => 'artwork-gallery',
                                 ),
                             ),
                         ),

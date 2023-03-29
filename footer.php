@@ -22,7 +22,8 @@
                             'post_type' => 'artist',
                             'orderby' => 'title',
                             'order' => 'ASC',
-                            'numberposts' => '-1',
+                            'posts_per_page' => -1,
+                            'numberposts' => -1,
                         );
                 
                         $loop = new WP_Query($args);
