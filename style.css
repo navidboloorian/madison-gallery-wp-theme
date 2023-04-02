@@ -157,6 +157,11 @@ li.current_page_item a
     list-style-type: none;
 }
 
+#footer-email 
+{
+    text-align: center;
+}
+
 .footer-artist-name 
 {
     text-transform: uppercase;
@@ -177,16 +182,26 @@ li.current_page_item a
 {
     display: grid;
     gap: 5px;
-    grid-template-columns: 100px auto;
+    grid-template-columns: repeat(3, auto);
+    justify-content: end;
 }
 
 #social-media-links 
 {
     display: grid;
-    grid-template-columns: repeat(3, 33px);
+    grid-template-columns: auto;
     background-color: #ffffff;
     justify-content: center;
-    width: 100px;
+}
+
+#artsy-logo 
+{
+    width: 140px;
+}
+
+#social-media-links img 
+{
+    width: 31px;
 }
 
 .sidebar-header 

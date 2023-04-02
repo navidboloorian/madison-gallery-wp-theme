@@ -11,20 +11,29 @@
                     </div>
                     <div id="footer-email">
                         <p>
-                            To receive emails about updates, exhibitions, and more, sign up for our mailing list.
+                            To receive emails about updates, exhibitions, and more, <a href="/contact">sign up</a> for our mailing list.
                         </p>
                     </div>
                     <div id="footer-links">
                         <div>
-                            <a href="https://www.artsy.net/madison-gallery"><img src=<?php echo get_template_directory_uri()."/assets/images/artsy-logo.jpg" ?>></a>
+                            <a href="https://www.artsy.net/madison-gallery">
+                                <img id="artsy-logo" src=<?php echo get_template_directory_uri()."/assets/images/artsy-logo.jpg" ?>>
+                            </a>
+                        </div>
+                        <div>
                             <div id="social-media-links">
-                                <a href="https://www.facebook.com/MadisonGallery"><img src=<?php echo get_template_directory_uri()."/assets/images/facebook-icon.gif" ?>></a>
-                                <a href="http://instagram.com/madisongallery"><img src=<?php echo get_template_directory_uri()."/assets/images/instagram-icon.jpg" ?>></a>
-                                <a href="https://twitter.com/Madison_Gallery"><img src=<?php echo get_template_directory_uri()."/assets/images/twitter-icon.gif" ?>></a>
+                                <a href="https://www.facebook.com/MadisonGallery">
+                                    <img src=<?php echo get_template_directory_uri()."/assets/images/facebook-icon.gif" ?>>
+                                </a>
+                                <a href="http://instagram.com/madisongallery">
+                                    <img src=<?php echo get_template_directory_uri()."/assets/images/instagram-icon.jpg" ?>>
+                                </a>
                             </div>
                         </div>
                         <div>
-                            <img src=<?php echo get_template_directory_uri()."/assets/images/500-best-galleries.jpg" ?>>
+                            <a href="https://www.artland.com/galleries/madison-gallery">
+                                <img width="68" src=<?php echo get_template_directory_uri()."/assets/images/artland-logo.png" ?>>
+                            </a>
                         </div>
                     </div>
                 </div>
