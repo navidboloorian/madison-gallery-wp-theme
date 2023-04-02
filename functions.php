@@ -276,6 +276,17 @@
         register_post_type('fair', $args);
     }
 
+    function mg_order_by_last_name($orderby, \WP_Query $q) {
+        if('last_name' === $q->get('orderby') && $get_order =  $q->get('order')) {
+            if(in_array( strtoupper($get_order), ['ASC', 'DESC'])) {
+                global $wpdb;
+                $orderby = " SUBSTRING_INDEX({$wpdb->posts}.post_title, ' ', -1) " . $get_order;
+            }
+        }
+
+        return $orderby;
+    }
+
 
     // hijack wp hooks
     add_action('after_setup_theme', 'mg_theme_support');
@@ -286,4 +297,6 @@
     add_action('init', 'mg_post_type_press_release');
     add_action('init', 'mg_post_type_exhibition');
     add_action('init', 'mg_post_type_fair');
+
+    add_filter('posts_orderby', 'mg_order_by_last_name', PHP_INT_MAX, 2);
 ?>

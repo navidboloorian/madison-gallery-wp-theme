@@ -2,7 +2,7 @@
     <?php 
         $args = array(
             'post_type' => 'artist',
-            'orderby' => 'title',
+            'orderby' => 'last_name',
             'order' => 'ASC',
             'posts_per_page' => -1,
             'numberposts' => -1,
