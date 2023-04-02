@@ -165,13 +165,6 @@
                     array(
                         'core/heading',
                         array( 
-                            'content' => 'Artist Name',
-                            'className' => 'exhibition-artist'
-                        ),
-                    ),
-                    array(
-                        'core/heading',
-                        array( 
                             'content' => 'Date',
                             'className' => 'exhibition-date'
                         ),

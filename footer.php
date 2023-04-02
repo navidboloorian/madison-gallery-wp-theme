@@ -5,7 +5,7 @@
                         <p>
                             320 SOUTH CEDROS AVENUE, SUITE 200<br>
                             SOLANA BEACH, CA 92075<br>
-                            <a href="tel:8585239155">TEL 858 523 9155</a><br>
+                            <a href="tel:8585239155"><b>TEL 858 523 9155</b></a><br>
                             <a href="javascript:window.location.href = 'mailto:' + ['info','madisongalleries.com'].join('@')">INFO<!----->@<!------>MADISONGALLERIES.COM</a>
                         </p>
                     </div>

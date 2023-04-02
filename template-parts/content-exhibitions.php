@@ -4,7 +4,7 @@
         $args = array(
             'post_type' => 'exhibition',
             'orderby' => 'date',
-            'order' => 'DESC',
+            'order' => 'ASC',
             'tag' => 'current',
             'numberposts' => '-1',
         );
@@ -24,7 +24,6 @@
             echo "<img class='exhibition-image' src='".$imgUrl."'>";
             echo "<h3 id='featured-exhibition-tag' class='exhibition-tag'>".$exhibitionTag."</h3>";
             echo "<h1 id='featured-exhibition-title'>".$exhibitionTitle."</h2>";
-            echo "<h2 id='featured-exhibition-artist' class='exhibition-artist-name'></h2>";
             echo "<h3 class='exhibition-date-display'></h3>";
             echo "</div>";
             echo "<div class='hidden'>";
@@ -46,7 +45,6 @@
             echo "<img class='artists-image' src='".$imgUrl."'>";
             echo "<h6 id='featured-exhibition-tag' class='exhibition-tag'>".$exhibitionTag."</h6>";
             echo "<h4 id='featured-exhibition-title'>".$exhibitionTitle."</h4>";
-            echo "<h5 id='featured-exhibition-artist' class='exhibition-artist-name'></h5>";
             echo "<h6 class='exhibition-date-display'></h6>";
             echo "<div class='hidden'>";
             echo the_content();
@@ -61,7 +59,7 @@
         $args = array(
             'post_type' => 'exhibition',
             'orderby' => 'date',
-            'order' => 'DESC',
+            'order' => 'ASC',
             'tag' => 'upcoming',
             'numberposts' => '-1',
         );
@@ -86,7 +84,6 @@
             echo "<img class='artists-image' src='".$imgUrl."'>";
             echo "<h6 id='featured-exhibition-tag' class='exhibition-tag'>".$exhibitionTag."</h6>";
             echo "<h4 id='featured-exhibition-title'>".$exhibitionTitle."</h4>";
-            echo "<h5 id='featured-exhibition-artist' class='exhibition-artist-name'></h5>";
             echo "<h6 class='exhibition-date-display'></h6>";
             echo "<div class='hidden'>";
             echo the_content();
@@ -97,12 +94,13 @@
 
         wp_reset_postdata();
 
-        // get past exhibitions
+        // get first six past exhibitions
         $args = array(
             'post_type' => 'exhibition',
             'orderby' => 'date',
-            'order' => 'DESC',
+            'order' => 'ASC',
             'tag' => 'past',
+            'posts_per_page' => -1,
             'numberposts' => '-1',
         );
 
@@ -113,6 +111,8 @@
             echo "<h3 class='exhibition-group-label'>Past</h3>";
         }
 
+        $number_past_posts = 0;
+
         echo "<div class='exhibitions-grid'>";
         while ($loop->have_posts()) {
             $loop->the_post();
@@ -122,11 +122,18 @@
             $exhibitionTag = get_the_tags()[0]->name;
             $imgUrl = get_the_post_thumbnail_url();
 
-            echo "<a class='exhibition-image-link' href = '".$exhibitionUrl."'>";
+            $number_past_posts++;
+
+            if($number_past_posts <= 6) {
+                echo "<a class='exhibition-image-link' href = '".$exhibitionUrl."'>";
+            }
+            else {
+                echo "<a class='exhibition-image-link hidden' href = '".$exhibitionUrl."'>";
+            }
+
             echo "<img class='artists-image' src='".$imgUrl."'>";
             echo "<h6 id='featured-exhibition-tag' class='exhibition-tag'>".$exhibitionTag."</h6>";
             echo "<h4 id='featured-exhibition-title'>".$exhibitionTitle."</h4>";
-            echo "<h5 id='featured-exhibition-artist' class='exhibition-artist-name'></h5>";
             echo "<h6 class='exhibition-date-display'></h6>";
             echo "<div class='hidden'>";
             echo the_content();
@@ -134,6 +141,7 @@
             echo "</a>";
         }
         echo "</div>";
+        echo "<div id = 'see-more-wrapper'><hr><button id='see-more-button'>see more</button><hr></div>";
 
         wp_reset_postdata();
     ?>

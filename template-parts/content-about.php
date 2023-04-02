@@ -2,9 +2,9 @@
     <div class="details-sidebar">
         <h1 class="sidebar-header"><?php the_title(); ?></h1>
         <p>
-            Gallery Hours<br> 
-            Monday - Saturday, 11-4<br>
-            Sundays by appointment
+            <b>Gallery Hours</b><br> 
+            <b>Monday - Saturday, 11-4</b><br>
+            <b>Sundays by appointment</b>
         </p>
 
         <p>

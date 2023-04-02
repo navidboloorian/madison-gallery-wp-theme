@@ -5,6 +5,7 @@ document.addEventListener('DOMContentLoaded', function(event) {
     setExhibitionDetails();
     setExhibitionContent();
     populateDetailsSidebar();
+    seeMore();
     preventReload();
 })
 
@@ -54,16 +55,15 @@ const setExhibitionDetails = () => {
     const exhibitionsWrapper = document.querySelector('#exhibitions-wrapper');
 
     if(exhibitionsWrapper) {
-        const exhibitionArtists = document.querySelectorAll('.exhibition-artist');
         const exhibitionDates = document.querySelectorAll('.exhibition-date');
 
-        for(let i = 0; i < exhibitionArtists.length; i++) {
-            const exhibitionArtist = exhibitionArtists[i];
+        for(let i = 0; i < exhibitionDates.length; i++) {
             const exhibitionDate = exhibitionDates[i];
 
-            const parentElement = exhibitionArtist.parentElement.parentElement.parentElement.parentElement;
-            parentElement.querySelector('.exhibition-artist-name').innerHTML = exhibitionArtist.textContent;
+            const parentElement = exhibitionDate.parentElement.parentElement.parentElement.parentElement;
             parentElement.querySelector('.exhibition-date-display').innerHTML = exhibitionDate.textContent;
+
+            console.log(i);
         }
     }
 }
@@ -73,15 +73,12 @@ const setExhibitionContent = () => {
     const exhibitionContent = document.querySelector('#exhibition-content');
 
     if(exhibitionContent) {
-        const exhibitionArtist = document.querySelector('#exhibition-artist');
         const exhibitionDate = document.querySelector('#exhibition-date');
 
         const exhibitionContentTemplate = document.querySelector('.exhibition-content');
-        const exhibitionArtistTemplate = document.querySelector('.exhibition-artist');
-        const exhibitionDateTempalte = document.querySelector('.exhibition-date');
+        const exhibitionDateTemplate = document.querySelector('.exhibition-date');
         
-        exhibitionArtist.innerHTML = exhibitionArtistTemplate.textContent;
-        exhibitionDate.innerHTML = exhibitionDateTempalte.textContent;
+        exhibitionDate.innerHTML = exhibitionDateTemplate.textContent;
 
         exhibitionContent.appendChild(exhibitionContentTemplate);
     }
@@ -237,7 +234,22 @@ const setDetailsSidebarDisplay = (content) => {
     }
 }
 
+const seeMore = () => {
+    const seeMoreButton = document.querySelector("#see-more-button");
+    const seeMoreWrapper = document.querySelector("#see-more-wrapper");
 
+    if(seeMoreButton) {
+        seeMoreButton.onclick = () => {
+            seeMoreWrapper.classList.add("hidden");
+
+            const hiddenExhibitions = document.querySelectorAll(".exhibition-image-link.hidden");
+
+            for(let i = 0; i < hiddenExhibitions.length; i++) {
+                hiddenExhibitions[i].classList.remove("hidden");
+            }
+        }
+    }
+}
 
 /** Prevent Form Reload */
 const preventReload = () => {
