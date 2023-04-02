@@ -6,13 +6,12 @@
     <div id="artist-wrapper">
         <div class="details-sidebar">
             <h1 class="sidebar-header"><?php the_title(); ?></h1>
-            <ul>
-            </ul>
-            <div id="artwork-info">
-            </div>
+            <ul></ul>
+            <div id="artwork-info"></div>
         </div>
         <div id="artist-content">
         </div>
+        <div id="artwork-info-mobile"></div>
     </div>
     <div class="hidden">
         <?php the_content(); ?>

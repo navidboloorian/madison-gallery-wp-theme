@@ -406,6 +406,11 @@ li.current_page_item a
     width: 100%;
 }
 
+#featured-exhibition-tag, #featured-exhibition-artist, #featured-exhibition-title
+{
+    line-height: 150%;
+}
+
 #featured-exhibition img 
 {
     width: 100%;
@@ -415,6 +420,7 @@ li.current_page_item a
 {
     color: #6d6e70;
     text-decoration: none;
+    line-height: 150%;
 }
 
 .exhibition-group-label 
@@ -457,8 +463,13 @@ hr
     gap: 10px;
 }
 
+#exhibition-date, #exhibition-title, #exhibition-artist 
+{
+    font-family: 'Playfair Display' !important;
+} 
+
 /** Fair Page **/
-#fair-wrapper * 
+#fair-wrapper
 {
     font-family: 'Playfair Display' !important;
 }
@@ -485,12 +496,12 @@ hr
     color: #6d6e70;
 }
 
-#exhibition-content *
+#exhibition-content
 {
     font-family: 'Playfair Display' !important;
 }
 
-#exhibition-wrapper * 
+#exhibition-wrapper 
 {
     font-family: 'Playfair Display' !important;
 }

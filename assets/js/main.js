@@ -124,6 +124,7 @@ const setDetailsSidebarDisplay = (content) => {
 
         const artworkGallery = display.querySelector(".artwork-gallery");
         const artworkInfo = document.querySelector("#artwork-info");
+        const artworkInfoMobile = document.querySelector("#artwork-info-mobile");
 
         artistContent.innerHTML = "";
         artworkInfo.innerHTML = "";
@@ -134,7 +135,8 @@ const setDetailsSidebarDisplay = (content) => {
             let currentArtIndex = 0;
             artistContent.innerHTML = `<div id='artwork-gallery-grid-display'></div><img id='current-image' src='${artworks[currentArtIndex].firstChild.src}'>`;
 
-            artworkInfo.innerHTML = `
+            if (window.innerWidth > 670) {
+                artworkInfo.innerHTML = `
                 <div id='artwork-gallery-navigation'>
                     <div id='artwork-gallery-buttons'>
                         <button id='artwork-gallery-decrement'></button>
@@ -147,6 +149,22 @@ const setDetailsSidebarDisplay = (content) => {
                     </div>
                     <div id='artwork-description'>${artworks[currentArtIndex].firstChild.alt}</div>
                 </div>`;
+            }
+            else {
+                artworkInfoMobile.innerHTML = `
+                <div id='artwork-gallery-navigation'>
+                    <div id='artwork-gallery-buttons'>
+                        <button id='artwork-gallery-decrement'></button>
+                        <button id='artwork-gallery-increment'></button>
+                        <div></div>
+                        <button id='artwork-gallery-grid'></button>
+                        <span id='artwork-gallery-counter'>
+                            ${currentArtIndex + 1} / ${artworks.length}
+                        </span>
+                    </div>
+                    <div id='artwork-description'>${artworks[currentArtIndex].firstChild.alt}</div>
+                </div>`;
+            }
 
             const artworkGalleryGridDisplay = document.querySelector("#artwork-gallery-grid-display");
             const artworkGalleryNavigation = document.querySelector("#artwork-gallery-navigation");
