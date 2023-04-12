@@ -1,11 +1,14 @@
 <div id="fair-wrapper">
     <?php 
+        $line_visible = false;
+
         // get current exhibitions
         $args = array(
             'post_type' => 'fair',
             'orderby' => 'date',
-            'order' => 'DESC',
+            'order' => 'ASC',
             'tag' => 'current',
+            'posts_per_page' => -1,
             'numberposts' => '-1',
         );
 
@@ -13,26 +16,28 @@
 
         if($loop->have_posts()) {
             echo "<h3 class='exhibition-group-label'>Current</h3>";
-        }
+            echo "<div class='exhibitions-grid'>";
 
-        echo "<div class='exhibitions-grid'>";
-        while ($loop->have_posts()) {
-            $loop->the_post();
+            while ($loop->have_posts()) {
+                $line_visible = true;
 
-            $fairUrl = get_the_permalink();
-            $fairTitle = get_the_title();
-            $imgUrl = get_the_post_thumbnail_url();
+                $loop->the_post();
 
-            echo "<a class='exhibition-image-link' href = '".$fairUrl."'>";
-            echo "<img class='artists-image' src='".$imgUrl."'>";
-            echo "<h4 id='featured-exhibition-title'>".$fairTitle."</h4>"; 
-            echo "<h6 class='fair-date-display'></h6>";
-            echo "<div class='hidden'>";
-            echo the_content();
+                $fairUrl = get_the_permalink();
+                $fairTitle = get_the_title();
+                $imgUrl = get_the_post_thumbnail_url();
+
+                echo "<a class='exhibition-image-link' href = '".$fairUrl."'>";
+                echo "<img class='artists-image' src='".$imgUrl."'>";
+                echo "<h4 id='featured-exhibition-title'>".$fairTitle."</h4>"; 
+                echo "<h6 class='fair-date-display'></h6>";
+                echo "<div class='hidden'>";
+                echo the_content();
+                echo "</div>";
+                echo "</a>";
+            }
             echo "</div>";
-            echo "</a>";
         }
-        echo "</div>";
 
         wp_reset_postdata();
 
@@ -40,8 +45,9 @@
         $args = array(
             'post_type' => 'fair',
             'orderby' => 'date',
-            'order' => 'DESC',
+            'order' => 'ASC',
             'tag' => 'upcoming',
+            'posts_per_page' => -1,
             'numberposts' => '-1',
         );
 
@@ -50,26 +56,28 @@
         if($loop->have_posts()) {
             echo "<br>";
             echo "<h3 class='exhibition-group-label'>Upcoming</h3>";
-        }
 
-        echo "<div class='exhibitions-grid'>";
-        while ($loop->have_posts()) {
-            $loop->the_post();
+            echo "<div class='exhibitions-grid'>";
+            while ($loop->have_posts()) {
+                $line_visible = true;
 
-            $fairUrl = get_the_permalink();
-            $fairTitle = get_the_title();
-            $imgUrl = get_the_post_thumbnail_url();
+                $loop->the_post();
 
-            echo "<a class='exhibition-image-link' href = '".$fairUrl."'>";
-            echo "<img class='artists-image' src='".$imgUrl."'>";
-            echo "<h4 id='featured-exhibition-title'>".$fairTitle."</h4>"; 
-            echo "<h6 class='fair-date-display'></h6>";
-            echo "<div class='hidden'>";
-            echo the_content();
+                $fairUrl = get_the_permalink();
+                $fairTitle = get_the_title();
+                $imgUrl = get_the_post_thumbnail_url();
+
+                echo "<a class='exhibition-image-link' href = '".$fairUrl."'>";
+                echo "<img class='artists-image' src='".$imgUrl."'>";
+                echo "<h4 id='featured-exhibition-title'>".$fairTitle."</h4>"; 
+                echo "<h6 class='fair-date-display'></h6>";
+                echo "<div class='hidden'>";
+                echo the_content();
+                echo "</div>";
+                echo "</a>";
+            }
             echo "</div>";
-            echo "</a>";
         }
-        echo "</div>";
 
         wp_reset_postdata();
 
@@ -77,36 +85,49 @@
         $args = array(
             'post_type' => 'fair',
             'orderby' => 'date',
-            'order' => 'DESC',
+            'order' => 'ASC',
             'tag' => 'past',
+            'posts_per_page' => -1,
             'numberposts' => '-1',
         );
+
+        $number_past_posts = 0;
 
         $loop = new WP_Query($args);
 
         if($loop->have_posts()) {
-            echo "<hr>";
+            if($line_visible) echo "<hr>";
+            
             echo "<h3 class='exhibition-group-label'>Past</h3>";
-        }
+            echo "<div class='exhibitions-grid'>";
 
-        echo "<div class='exhibitions-grid'>";
-        while ($loop->have_posts()) {
-            $loop->the_post();
+            while ($loop->have_posts()) {
+                $loop->the_post();
 
-            $fairUrl = get_the_permalink();
-            $fairTitle = get_the_title();
-            $imgUrl = get_the_post_thumbnail_url();
+                $number_past_posts++;
 
-            echo "<a class='exhibition-image-link' href = '".$fairUrl."'>";
-            echo "<img class='artists-image' src='".$imgUrl."'>";
-            echo "<h4 id='featured-exhibition-title'>".$fairTitle."</h4>"; 
-            echo "<h6 class='fair-date-display'></h6>";
-            echo "<div class='hidden'>";
-            echo the_content();
+                $fairUrl = get_the_permalink();
+                $fairTitle = get_the_title();
+                $imgUrl = get_the_post_thumbnail_url();
+
+                
+                if($number_past_posts <= 6) {
+                    echo "<a class='exhibition-image-link' href = '".$fairUrl."'>";
+                }
+                else {
+                    echo "<a class='exhibition-image-link hidden' href = '".$fairUrl."'>";
+                }
+                echo "<img class='artists-image' src='".$imgUrl."'>";
+                echo "<h4 id='featured-exhibition-title'>".$fairTitle."</h4>"; 
+                echo "<h6 class='fair-date-display'></h6>";
+                echo "<div class='hidden'>";
+                echo the_content();
+                echo "</div>";
+                echo "</a>";
+            }
             echo "</div>";
-            echo "</a>";
+            echo "<div id = 'see-more-wrapper'><hr><button id='see-more-button'>see more</button><hr></div>";
         }
-        echo "</div>";
 
         wp_reset_postdata();
     ?>

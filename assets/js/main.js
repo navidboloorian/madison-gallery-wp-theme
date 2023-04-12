@@ -2,6 +2,7 @@ document.addEventListener('DOMContentLoaded', function(event) {
     bindMobileNavbarButtons();
     positionFooter();
     setFairDetails();
+    setFairContent();
     setExhibitionDetails();
     setExhibitionContent();
     populateDetailsSidebar();
@@ -50,6 +51,21 @@ const setFairDetails = () => {
     }
 }
 
+const setFairContent = () => {
+    const fairContentWrapper = document.querySelector('#fair-content-wrapper');
+
+    if(fairContentWrapper) {
+        const exhibitionDate = document.querySelector('#exhibition-date');
+
+        const exhibitionContentTemplate = document.querySelector('.fair-content');
+        const exhibitionDateTemplate = document.querySelector('.fair-date');
+        
+        exhibitionDate.innerHTML = exhibitionDateTemplate.textContent;
+
+        fairContentWrapper.appendChild(exhibitionContentTemplate);
+    }
+}
+
 /** Exhibitions */
 const setExhibitionDetails = () => {
     const exhibitionsWrapper = document.querySelector('#exhibitions-wrapper');
@@ -62,13 +78,10 @@ const setExhibitionDetails = () => {
 
             const parentElement = exhibitionDate.parentElement.parentElement.parentElement.parentElement;
             parentElement.querySelector('.exhibition-date-display').innerHTML = exhibitionDate.textContent;
-
-            console.log(i);
         }
     }
 }
 
-/** Exhibition */
 const setExhibitionContent = () => {
     const exhibitionContent = document.querySelector('#exhibition-content');
 

@@ -90,6 +90,21 @@ em, strong
     color: #000000;
 }
 
+.fullscreenBtn button 
+{
+    display: none;
+}
+
+#mainContainer 
+{
+    background-color: #ffffff;
+}
+
+#viewer 
+{
+    background-color: red;
+}
+
 li.current_page_item a
 {
     color:#000000 !important;
@@ -222,18 +237,18 @@ li.current_page_item a
     margin-top: 25px;       
 }
 
-.details-sidebar li
+.details-sidebar li, .details-sidebar a
 {
     color: #7d7d7b;
     text-decoration: none;
     font-weight: 600;
     font-size: 12px;
-    height: 28px;
+    min-height: 28px;
     display: block;
     font-family: Source Sans Pro !important;
 }
 
-.details-sidebar li:hover 
+.details-sidebar li:hover, .details-sidebar a:hover
 {
     color: #000000;
     cursor: pointer;
@@ -495,10 +510,16 @@ hr
 }
 
 /** Exhibition Page **/
-#exhibition-wrapper h1, h2, h3
+#exhibition-wrapper h1, #exhibition-wrapper h2, #exhibition-wrapper h3, #fair-content-wrapper h1, #fair-content-wrapper h2, #fair-content-wrapper h3
 {
     margin: 0px;
     text-transform: uppercase;
+}
+
+#exhibition-wrapper h1, #fair-content-wrapper h1 
+{
+    line-height: 200%;
+    margin-bottom: 10px;
 }
 
 #exhibition-title 
@@ -533,7 +554,7 @@ hr
     font-family: 'Playfair Display' !important;
 }
 
-#exhibition-wrapper h3 
+#exhibition-wrapper h3, #fair-content-wrapper h3 
 {
     font-weight: lighter;
     color: #7d7d7b;
@@ -608,6 +629,13 @@ hr
 }
 
 /** Press Page **/
+#news-content 
+{
+    margin-top: 40px;
+    display: grid;
+    gap: 20px;
+}
+
 #news-grid 
 {
     display: grid;
@@ -642,9 +670,8 @@ hr
 
 .news-image 
 {
-    height: 166px;
-    width: 156px;
-    background-size: cover !important;
+    height: 170px;
+    width: 133px !important;
     background-position: center !important;
     background-repeat: no-repeat !important;
 }
@@ -1004,12 +1031,12 @@ hr
     }
 
     /** Mobile Exhibition Page **/
-    #exhibition-wrapper h1
+    #exhibition-wrapper h1, #fair-content-wrapper h1
     {
         font-size: 18px;
     }
 
-    #exhibition-wrapper h2, h3
+    #exhibition-wrapper h2, #exhibition-wrapper h3, #fair-content-wrapper h2, #fair-content-wrapper h3
     {
         font-size: 13px;
     }

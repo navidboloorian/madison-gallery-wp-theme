@@ -6,6 +6,7 @@
             'orderby' => 'date',
             'order' => 'ASC',
             'tag' => 'current',
+            'posts_per_page' => -1,
             'numberposts' => '-1',
         );
 
@@ -61,6 +62,7 @@
             'orderby' => 'date',
             'order' => 'ASC',
             'tag' => 'upcoming',
+            'posts_per_page' => -1,
             'numberposts' => '-1',
         );
 

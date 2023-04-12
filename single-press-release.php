@@ -6,7 +6,7 @@
     <div id="press-wrapper">
         <h1 class="sidebar-header">Press</h1>
         <?php 
-            echo "<h2 id='press-tag'>".get_the_tags()[0]->name."</h2>";
+            echo "<h2 id='press-tag'>".get_the_title()."</h2>";
             the_content();
         ?> 
     </div>
